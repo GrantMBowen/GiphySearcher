@@ -6,17 +6,17 @@ $(document).ready(function() {
    }
 });
 
-function movieButtonClicked() {
+function submitButtonClicked() {
     var userInput = $('#movie-input').val().trim();
 
     if (userInput) {
-        $('#movie-buttons').append("<button type='button' onclick='searchGif(\"" + userInput + "\")' class='btn btn-success' value=' " + userInput + "'>" + userInput + "</button>");
+        $('#movie-buttons').append("<button type='button' onclick='searchGif(\"" + userInput + "\")' class='btn btn-warning' value=' " + userInput + "'>" + userInput + "</button>");
     }
-}
+};
 
 function searchGif(gifName) {
     $.ajax({
-        url: 'https://api.giphy.com/v1/gifs/search?q= ' + gifName + ' &api_key=LzFwoZvUsteMC912e7ifoGYF8kv9dxSz',
+        url: 'https://api.giphy.com/v1/gifs/search?q= ' + gifName + ' &limit=10&api_key=LzFwoZvUsteMC912e7ifoGYF8kv9dxSz',
         type: 'GET',
     })
     .done(function(response) {
