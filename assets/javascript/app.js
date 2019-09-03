@@ -1,4 +1,4 @@
-var moviesArray = ["Shawshank Redemtion", "The Matrix", "Cool Hand Luke", "Rebel Without a Cause", "Gone with the Wind", "Open Range"];
+var moviesArray = ["Shawshank Redemtion", "The Matrix", "Cool Hand Luke", "Rebel Without a Cause", "Gone with the Wind", "Dr. Strangelove", "Apocalypse Now", "The Usual Suspects", "The Sandlot", "American History X", "Dumb and Dumber", "Willy Wonka"];
 
 $(document).ready(function() {
     for (var i = 0; i < moviesArray.length; i++) {
@@ -27,10 +27,10 @@ function searchGif(gifName) {
 function displayGif(response) {
     $('#movies').empty();
     for (var i = 0; i < response.data.length; i++) {
-        var rating = "<div class='ratings'> Rating:  " + (response.data[i].rating) + " </div>";
+        var rating = "<div class='ratings' style='color: white'> Rating:  " + (response.data[i].rating) + " </div>";
         var image = rating + '<img src= " ' + response.data[i].images.fixed_height_still.url +
         '" data-still=" ' + response.data[i].images.fixed_height_still.url +
-        ' " data-animate=" ' + response.data[i].images.fixed_height.url + '"data-state="still" class="movImage" style= "width:250px">';
+        ' " data-animate=" ' + response.data[i].images.fixed_height.url + '"data-state="still" class="movImage" style= "width:70vw; border: 2px solid white; margin: 50px 50px 50px 50px">';
 
         image = '<div class="col-md-4">' + image + "</div>";
         $("#movies").append(image);
